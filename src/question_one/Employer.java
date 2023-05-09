@@ -130,5 +130,4 @@ public class Employer {
       this.setTextIsBonusOrDiscount("Bonus :");
     }
     }
-
 }
