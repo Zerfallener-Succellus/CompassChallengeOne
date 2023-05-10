@@ -2,6 +2,9 @@ package question_one;
 
 import java.text.DecimalFormat;
 
+// The Employer class generates the data for the employee constructor to work
+// initially setting the necessary variables and setting them in the setters
+
 public class Employer {
   private String name;
   private double salary;
@@ -10,11 +13,17 @@ public class Employer {
   private String textIsBonusOrDiscount;
   private String salaryFormated;
   private String liquidSalaryFormated;
-  private String bonusFormated;
 
+  // this decimal format is used to format the double values for the common monei
+  // structure
   DecimalFormat df = new DecimalFormat("#,##0.00");
 
   /**
+   * Employee's constructor, it receives name and salary and returns the other
+   * variables
+   * such as, net salary, bonus or discount, and whether it will be a bonus or
+   * discount
+   * 
    * @param name
    * @param salary
    */
@@ -64,6 +73,12 @@ public class Employer {
   }
 
   /**
+   * The bonus percentages are added or the discount subtracted according to
+   * the rules:
+   * if salary <= 1000 {salary += 20%}
+   * if salary > 1000 and < 2000 {salary += 10%}
+   * if salary >= 2000 {salary -= 10%}
+   * 
    * @param liquidSalary the liquidSalary to set
    */
   public void setLiquidSalary(double liquidSalary) {
@@ -85,6 +100,12 @@ public class Employer {
   }
 
   /**
+   * 
+   * The bonus is defined by the rules:
+   * if salary <= 1000 bonus = 20%
+   * if salary > 1000 and < 2000 bonus = 10%
+   * if salary >= 2000 bonus = -10%
+   * 
    * @param bonusAndDiscount the bonusAndDiscount to set
    */
   public void setBonusAndDiscount(double bonusAndDiscount) {
@@ -106,6 +127,11 @@ public class Employer {
   }
 
   /**
+   * It is analyzed whether it will be a bonus or discount based on the rules:
+   * if salary <= 1000 = bonus
+   * if salary > 1000 and < 2000 = bonus
+   * if salary >= 2000 bonus = discounto
+   * 
    * @param textIsBonusOrDiscount the textIsBonusOrDiscount to set
    */
   public void setTextIsBonusOrDiscount(String textIsBonusOrDiscount) {
@@ -147,19 +173,13 @@ public class Employer {
     this.liquidSalaryFormated = df.format(Double.toString(this.liquidSalary));
   }
 
-  /**
-   * @return String return the bonusFormated
-   */
-  public String getBonusFormated() {
-    return bonusFormated;
-  }
-
-  /**
-   * @param bonusFormated the bonusFormated to set
-   */
-  public void setBonusFormated(String bonusFormated) {
-    this.bonusFormated = bonusFormated;
-  }
+  // Here a toString method is created to pass the Employee's information, since
+  // formatted with the decimalformat called at the beginning of the code
+  // the info is displayed in this format:
+  // Employer: ABCD
+  // Salary: BRL 1,200.00
+  // Bonus: BRL 120.00
+  // Liquid salary: BRL 1,320.00
 
   @Override
   public String toString() {
