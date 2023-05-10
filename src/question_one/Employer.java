@@ -1,13 +1,19 @@
 package question_one;
 
+import java.text.DecimalFormat;
+
+
 public class Employer {
   private String name;
   private double salary;
   private double liquidSalary;
   private double bonusAndDiscount;
   private String textIsBonusOrDiscount;
+  private String salaryFormated;
+  private String liquidSalaryFormated;
+  private String bonusFormated;
 
-  
+  DecimalFormat df = new DecimalFormat("#,##0.00");
   
   /**
    * @param name
@@ -17,22 +23,12 @@ public class Employer {
 
     this.name = name;
     this.salary = salary;
+    setSalaryFormated(salaryFormated);
     setLiquidSalary(salary);
     setBonusAndDiscount(salary);
     setTextIsBonusOrDiscount(textIsBonusOrDiscount);
   }
     
-
-  
-    public static void main(String[] args) {
-      Employer empregado = new Employer("Davi", 1200);
-
-      System.out.println(empregado.name);
-      System.out.println(empregado.salary);
-      System.out.println(empregado.bonusAndDiscount);
-      System.out.println(empregado.liquidSalary);
-    }
-
 
     /**
      * @return String return the name
@@ -80,8 +76,6 @@ public class Employer {
        this.liquidSalary = this.salary + (this.salary * 0.1);
     }else if(this.salary >= 2000){
       this.liquidSalary = this.salary - (this.salary * 0.1);
-    }else{
-      this.liquidSalary = this.salary;
     }
     }
 
@@ -102,9 +96,7 @@ public class Employer {
     }else if(this.salary > 1000 && this.salary < 2000){
        this.bonusAndDiscount = this.salary * 0.1;
     }else if(this.salary >= 2000){
-      this.bonusAndDiscount = this.salary * 0.1 * -1;
-    }else{
-      this.bonusAndDiscount = this.salary;
+      this.bonusAndDiscount = this.salary * 0.1;
     }
     }
 
@@ -121,13 +113,60 @@ public class Employer {
     public void setTextIsBonusOrDiscount(String textIsBonusOrDiscount) {
             //Bonus And Discount
     if(this.salary <= 1000){
-      this.setTextIsBonusOrDiscount("Bonus :"); 
+      this.textIsBonusOrDiscount = "Bonus: +R$"; 
     }else if(this.salary > 1000 && this.salary < 2000){
-      this.setTextIsBonusOrDiscount("Bonus :");
+      this.textIsBonusOrDiscount = "Bonus: +R$";
     }else if(this.salary >= 2000){
-      this.setTextIsBonusOrDiscount("Discount :");
-    }else{
-      this.setTextIsBonusOrDiscount("Bonus :");
+      this.textIsBonusOrDiscount = "Discount: -R$";
     }
+    }
+
+    /**
+     * @return String return the salaryFormated
+     */
+    public String getSalaryFormated() {
+        return salaryFormated;
+    }
+
+    /**
+     * @param salaryFormated the salaryFormated to set
+     */
+    public void setSalaryFormated(String salaryFormated) {
+        this.salaryFormated = salaryFormated;
+    }
+
+    /**
+     * @return String return the liquidSalaryFormated
+     */
+    public String getLiquidSalaryFormated() {
+        return liquidSalaryFormated;
+    }
+
+    /**
+     * @param liquidSalaryFormated the liquidSalaryFormated to set
+     */
+    public void setLiquidSalaryFormated(String liquidSalaryFormated) {
+        this.liquidSalaryFormated = df.format(Double.toString(this.liquidSalary));
+    }
+
+    /**
+     * @return String return the bonusFormated
+     */
+    public String getBonusFormated() {
+        return bonusFormated;
+    }
+
+    /**
+     * @param bonusFormated the bonusFormated to set
+     */
+    public void setBonusFormated(String bonusFormated) {
+        this.bonusFormated = bonusFormated;
+    }
+
+
+    @Override
+    public String toString() {
+        return "\n" + "Employer: " + name + "\n" + "Salary: R$" + df.format(salary) + "\n" + this.textIsBonusOrDiscount + df.format(this.bonusAndDiscount) + "\n"
+        + "Liquid Salary: R$" + df.format(this.liquidSalary);
     }
 }

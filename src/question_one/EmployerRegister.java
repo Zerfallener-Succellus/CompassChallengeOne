@@ -31,6 +31,7 @@ public class EmployerRegister {
   }
 
   public void showEmployersData(){
+    System.out.println("");
     System.out.println("Employers: ");
     for (Employer employer : employers){
       System.out.println(employer);
