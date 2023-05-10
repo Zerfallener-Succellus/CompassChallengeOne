@@ -24,16 +24,20 @@ dentro da `src` estão as seguintes pastas contendo as questões:
 
 Primeiro o Programa recebe o número de empregados que deve cadastrar e armazenar o nome e salário de cada um, ele deve validar quando dar um aumento ou desconto no salario do funcionario	: 
 
-se salario <= 1000 {salario += 20%}
-se salario > 1000 e < 2000 {salario += 10%}
-se salario >= 2000 {salario -= 10%}
+- se salario <= 1000 {salario += 20%}
+- se salario > 1000 e < 2000 {salario += 10%} 
+- se salario >= 2000 {salario -= 10%} /rn
 
 no final exibir todos os funcionários nesse formato:
 
-Employer: ABCD
-Salary: R$ 1.200,00
-Bonus: R$ 120,00
-Liquid salary: R$ 1.320,00
+- Employer: ABCD
+
+- Salary: R$ 1.200,00
+
+- Bonus: R$ 120,00
+
+- Liquid salary: R$ 1.320,00
+
 
 O tratamento de exceções deve levar em conta caracteres inválidos como por exemplo informar um salário negativo ou utilizar um ! para o nome.
 
