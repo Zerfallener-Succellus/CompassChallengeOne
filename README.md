@@ -43,6 +43,16 @@ O tratamento de exceções deve levar em conta caracteres inválidos como por ex
 
 ## Questão 2
 
+O programa deve receber uma entrada String, e percorrer essa String, ao identificar as sequências de caracteres :-) e :-( deve classificar da seguinte forma: 
+
+- neutral: se o número de “:-)” for igual o de “:-(“
+- fun: se o número de “:-)” for maior que o de “:-(“
+- upset: se o número de “:-(” for maior que o de “:-)”
+
+após isso imprimir a classificação 
+
+## Questão 3
+
 The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
 
 Meanwhile, the compiled output files will be generated in the `bin` folder by default.
