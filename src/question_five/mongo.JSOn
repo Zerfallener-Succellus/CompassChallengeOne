@@ -3,7 +3,7 @@
   "age": 18,
   "phone": "999590808",
   "height": 1.94,
-  "email": "plfg@gmail.com,
+  "email": "plfg@gmail.com",
   "cpf": "123.456.789-10",
   "date_of_birth": ISODate("2004-06-23"),
   "address": {
