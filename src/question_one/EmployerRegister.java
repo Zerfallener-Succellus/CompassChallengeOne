@@ -4,11 +4,6 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-// The EmployerRegister function manages the registration of the employees that will be done
-// by the user, the Scanner asks for information about the employee and stores it in an ArrayList employers
-// which will be shown to the user at the end of the operation with the showEmployersData() function
-// input exceptions and invalid arguments are handled at the end with try-catch
-
 public class EmployerRegister {
 
   private ArrayList<Employer> employers;
@@ -62,9 +57,6 @@ public class EmployerRegister {
     }
   }
 
-  // The showEmployersData function uses a for where for each employer object
-  // inside the array employers it displays the information of each one.
-
   public void showEmployersData() {
     System.out.println("");
     System.out.println("Employers: ");
@@ -73,16 +65,10 @@ public class EmployerRegister {
     }
   }
 
-  /**
-   * @return ArrayList<Employer> return the employers
-   */
   public ArrayList<Employer> getEmployers() {
     return employers;
   }
 
-  /**
-   * @param employers the employers to set
-   */
   public void setEmployers(ArrayList<Employer> employers) {
     this.employers = employers;
   }
